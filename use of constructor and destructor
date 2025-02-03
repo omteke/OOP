@@ -1,0 +1,49 @@
+#include<iostream>
+using namespace std;
+
+class circle
+{
+	public:
+		int radius;
+		float area,c;
+		circle() //default constructor
+		{
+			cout<<"enter the value of radius:"<<endl;
+			cin>>radius;
+			area=3.142*radius*radius;
+			cout<<"Area of circle is:"<<area<<endl;
+			c=2*3.142*radius;
+			cout<<"the circumference of circle is:"<<c<<endl;
+		}
+		circle(int r1)   //parameterized constructor
+		{
+			cout<<"enter the value of radius:"<<endl;
+			cin>>radius;
+			area=3.142*radius*radius;
+			cout<<"Area of circle is:"<<area<<endl;
+			c=2*3.142*radius;
+			cout<<"the circumference of circle is:"<<c<<endl;
+		}
+		circle(circle &obj)  //copy constructor
+		{
+			
+//			cout<<"enter the value of radius:"<<endl;
+//			cin>>radius;
+			area=3.142*radius*radius;
+			cout<<"Area of circle is:"<<area<<endl;
+			c=2*3.142*radius;
+			cout<<"the circumference of circle is:"<<c<<endl;
+		}
+		~circle()
+		{
+			cout<<"destructor called"<<endl;
+		}
+		
+		
+};
+int main()
+{
+	circle c1;
+	circle c2(10);
+	circle c3=c2;
+}
