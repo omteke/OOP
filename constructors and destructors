@@ -1,0 +1,53 @@
+#include<iostream>
+using namespace std;
+class box{
+	public:
+		int *l,*b,*h;
+		void display()
+		{
+		    cout<<*l<<*b<<*h<<endl;
+		}
+		void setinfo(int a ,int b,int c)
+		{
+			l=new int(a);
+			this->b=new int(b);
+			h=new int(c);
+		}
+		box(){
+		    cout<<"default constructor called"<<endl;
+		  //  cout<<l<<b<<h<<endl;
+		    
+		}
+		box(int a,int b,int c){
+		    
+			l=new int(a);
+			this->b=new int(b);
+			h=new int(c);
+		    cout<<*l<<b<<*h<<endl;
+		}
+		box(box& obj){
+		  //  l=obj.l;//shallow copy
+		  //  b=obj.b; 
+		  //  h=obj.h;
+		  l=new int(*(obj.l));
+		  b=new int(*(obj.b));
+		  h=new int(*(obj.h));
+		    cout<<*l<<*b<<*h<<endl;
+		}
+		~box()
+		{
+		    cout<<"destructor is called"<<endl;
+		}
+		
+};
+int main(){
+	box s1;
+
+	s1.setinfo(2,3,5);
+	s1.display();
+	box s2(1,2,3);
+	box s3=s1;
+
+
+	
+}
