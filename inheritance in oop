@@ -1,0 +1,24 @@
+#include<iostream>
+using namespace std;
+class A{
+	public:
+		int a,b;
+		void get(){
+			cout<<"enter the two numbers"<<endl;
+			cin>>a>>b;
+		}
+		
+};
+class B:public A{
+	public:
+	void sum()
+	{
+		cout<<"sum of the two numbers is"<<a+b<<endl;
+	}
+};
+int main()
+{
+	B obj;
+	obj.get();
+	obj.sum();
+}
