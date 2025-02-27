@@ -1,0 +1,39 @@
+#include<iostream>
+using namespace std;
+class a{
+	public:
+	
+    void display2()
+    {
+        cout<<"hello"<<endl;
+    }
+		
+	
+};
+class b{
+	public:
+	
+    void display3()
+    {
+        cout<<"hi"<<endl;
+    }
+		
+	
+};
+class c : public a,public b{
+	public: 
+        void display1()
+        {
+            cout<<"good morning!"<<endl;
+      
+        }
+	
+};
+int main(){
+
+    c a;
+    a.display1();
+    a.display2();
+    a.display3();
+    // a.addition();
+}
