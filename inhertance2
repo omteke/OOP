@@ -1,0 +1,33 @@
+#include<iostream>
+using namespace std;
+class Base{
+	public:
+		int  a=10;
+	protected:
+		int b=20;
+	private:
+	     int c=30;
+    // void display()
+    // {
+    //     cout<<"enter the two numbers:"<<endl;
+    //     cin>>a>>b;
+    // }
+		
+	
+};
+class Derived : protected Base{
+	public: 
+        void display()
+        {
+            cout<<"a="<<a<<endl;
+            cout<<"b="<<b<<endl;
+            // cout<<"c="<<c<<endl;
+        }
+	
+};
+int main(){
+
+    Derived a;
+    a.display();
+    // a.addition();
+}
