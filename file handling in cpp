@@ -1,0 +1,37 @@
+#include<iostream>
+#include<fstream>
+using namespace std;
+class student{
+	public:
+		int roll;
+		char name[20];
+		float ptr;
+		void write()
+		{
+			fstream f;
+			f.open("student.txt",ios::app);
+			cout<<"enter roll,name & ptr";
+			cin>>roll>>name>>ptr;
+			f<<roll<<"\t"<<name<<"\t"<<ptr<<"\n";
+			f.close();
+		}
+		void read ()
+		{
+			fstream f;
+			f.open("student.txt",ios::in);
+			while(f){
+				f>>roll>>name>>ptr;
+				cout<<roll<<"\t"<<name<<"\t"<<ptr<<"\n";
+			}
+			f.close();
+		}
+};
+int main()
+{
+	student s;
+	s.write();
+	s.write();
+	s.read();
+	
+}
+
