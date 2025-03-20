@@ -1,0 +1,58 @@
+#include<iostream>
+#include<string>
+using namespace std;
+
+class Bookbus {
+    string from_city;
+    string to_city;
+    int seats;
+    
+public:
+    static int available_seats;
+    
+    Bookbus(string from = "source", string to = "dest", int s = 1) 
+        : from_city(from), to_city(to), seats(s) {
+        try {
+            if (seats > available_seats) {
+                throw "Not enough seats available";
+            }
+            else {
+                available_seats -= seats;
+                cout << "Busbooking..!\n Available seats now: " << available_seats << endl;
+            }
+        }
+        catch (const char* msg) {
+            cout << msg << endl;
+        }
+    }
+
+    void showseats() {
+        cout << "From city: " << from_city << endl;
+        cout << "To city: " << to_city << endl;
+        cout << "Booked seats: " << seats << endl;
+        cout<<"seats are successfully booked"<<endl;
+    }
+};
+
+int Bookbus::available_seats = 30;  // Initializing static variable
+
+int main() {
+	string from_city;
+	string to_city;
+	int seats;
+	cout<<"enter from_city:"<<endl;
+	cin>>from_city;
+	cout<<"enter to_city:"<<endl;
+	cin>>to_city;
+    cout<<"enter no of seats:"<<endl;
+	cin>>seats;
+    
+    Bookbus b(from_city,to_city,seats);
+    b.showseats();
+    
+//    
+//    Bookbus b2("Sangli", "Mumbai", 50);
+//    b2.showseats();
+
+    return 0;
+}
