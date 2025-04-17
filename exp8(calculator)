@@ -1,0 +1,67 @@
+#include<iostream>
+using namespace std;
+
+template<typename T>
+T findmax(T a,T b)
+{
+	return (a>b) ? a : b;	
+}
+
+template<typename T>
+class calculator{
+	private :
+		T num1,num2;
+		
+	public:
+		calculator(T a,T b) : num1(a), num2(b){}
+		
+		T add()
+		{
+			return num1+num2;
+		}
+		T substract()
+		{
+			return num1-num2;
+		}
+		T multiply()
+		{
+			return num1*num2;
+		}
+		T division()
+		{
+			if(num2!=0)
+			{
+				return num1/num2;
+			}
+			else
+			{
+				cout<<"ERROR : Division by zero"<<endl;
+				return 0;
+			}
+		}
+};
+int main()
+{
+	int p,q;
+	cout<<"enter two integer values:";
+	cin>>p>>q;
+	
+	cout<<"max of:"<<p<<" and "<<q<<"is:"<<findmax(p,q)<<endl; 
+	
+	calculator<int> intcal(p,q);
+	cout<<"integer operations:"<<endl;
+	cout<<p<<"+"<<q<<"="<<intcal.add()<<"\n";
+	cout<<p<<"-"<<q<<"="<<intcal.substract()<<"\n";
+	cout<<p<<"*"<<q<<"="<<intcal.multiply()<<"\n";
+	cout<<p<<"/"<<q<<"="<<intcal.division()<<"\n";
+	
+	float f1,f2;
+	cout<<"enter two float values:";
+	cin>>f1>>f1;
+	calculator<float> floatcal(f1,f2);
+	cout<<"integer operations:"<<endl;
+	cout<<p<<"+"<<q<<"="<<floatcal.add()<<"\n";
+	cout<<p<<"-"<<q<<"="<<floatcal.substract()<<"\n";
+	cout<<p<<"*"<<q<<"="<<floatcal.multiply()<<"\n";
+	cout<<p<<"/"<<q<<"="<<floatcal.division()<<"\n";
+}
